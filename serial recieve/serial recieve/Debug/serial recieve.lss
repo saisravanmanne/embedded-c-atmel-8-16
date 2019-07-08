@@ -1,0 +1,211 @@
+
+serial recieve.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000100  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000000c  00800060  00000100  00000174  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000180  2**0
+                  CONTENTS, READONLY
+  3 .debug_aranges 00000030  00000000  00000000  000001b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000211  00000000  00000000  000001e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 0000019d  00000000  00000000  000003f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   00000188  00000000  00000000  0000058e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000050  00000000  00000000  00000718  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    00000191  00000000  00000000  00000768  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    000000bb  00000000  00000000  000008f9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000050  00000000  00000000  000009b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   8:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  10:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  14:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  18:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  1c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  20:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  24:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  28:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  2c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  30:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  34:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  38:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  3c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  40:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  44:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  48:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  4c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  50:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e0 e0       	ldi	r30, 0x00	; 0
+  68:	f1 e0       	ldi	r31, 0x01	; 1
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ac 36       	cpi	r26, 0x6C	; 108
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	0e 94 54 00 	call	0xa8	; 0xa8 <main>
+  7a:	0c 94 7e 00 	jmp	0xfc	; 0xfc <_exit>
+
+0000007e <__bad_interrupt>:
+  7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000082 <trans>:
+        //TODO:: Please write your application code 
+    }
+}
+void trans(unsigned char data )
+{
+	while ( !( UCSRA & (1<<UDRE)) )
+  82:	5d 9b       	sbis	0x0b, 5	; 11
+  84:	fe cf       	rjmp	.-4      	; 0x82 <trans>
+	;
+	UDR = data;
+  86:	8c b9       	out	0x0c, r24	; 12
+  88:	08 95       	ret
+
+0000008a <strtrans>:
+}
+void strtrans(char *string)
+{
+  8a:	cf 93       	push	r28
+  8c:	df 93       	push	r29
+  8e:	ec 01       	movw	r28, r24
+	while(*string)
+  90:	88 81       	ld	r24, Y
+  92:	88 23       	and	r24, r24
+  94:	31 f0       	breq	.+12     	; 0xa2 <strtrans+0x18>
+  96:	21 96       	adiw	r28, 0x01	; 1
+	{
+		trans(*string++);
+  98:	0e 94 41 00 	call	0x82	; 0x82 <trans>
+	;
+	UDR = data;
+}
+void strtrans(char *string)
+{
+	while(*string)
+  9c:	89 91       	ld	r24, Y+
+  9e:	81 11       	cpse	r24, r1
+  a0:	fb cf       	rjmp	.-10     	; 0x98 <strtrans+0xe>
+	{
+		trans(*string++);
+	}
+  a2:	df 91       	pop	r29
+  a4:	cf 91       	pop	r28
+  a6:	08 95       	ret
+
+000000a8 <main>:
+#define BAUD 9600
+#define brc ((F_CPU/(16*BAUD))-1)
+void main(void)
+{
+	
+UBRRH = 0;
+  a8:	10 bc       	out	0x20, r1	; 32
+UBRRL =51;
+  aa:	83 e3       	ldi	r24, 0x33	; 51
+  ac:	89 b9       	out	0x09, r24	; 9
+UCSRB|= (1<<RXEN)|(1<<TXEN);
+  ae:	8a b1       	in	r24, 0x0a	; 10
+  b0:	88 61       	ori	r24, 0x18	; 24
+  b2:	8a b9       	out	0x0a, r24	; 10
+UCSRC |= (1 << URSEL)|(3<<UCSZ0);
+  b4:	80 b5       	in	r24, 0x20	; 32
+  b6:	86 68       	ori	r24, 0x86	; 134
+  b8:	80 bd       	out	0x20, r24	; 32
+
+char a;
+int p=2;
+char n=("\n");
+a=("sravan \t");
+  ba:	00 e6       	ldi	r16, 0x60	; 96
+  bc:	10 e0       	ldi	r17, 0x00	; 0
+
+
+    while(1)
+    {
+		
+	strtrans(a);
+  be:	11 27       	eor	r17, r17
+	strtrans("%d",p);
+  c0:	0f 2e       	mov	r0, r31
+  c2:	fd e3       	ldi	r31, 0x3D	; 61
+  c4:	ef 2e       	mov	r14, r31
+  c6:	f0 2d       	mov	r31, r0
+  c8:	0f 2e       	mov	r0, r31
+  ca:	fa e0       	ldi	r31, 0x0A	; 10
+  cc:	ff 2e       	mov	r15, r31
+  ce:	f0 2d       	mov	r31, r0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  d0:	c9 e1       	ldi	r28, 0x19	; 25
+  d2:	d0 e0       	ldi	r29, 0x00	; 0
+
+
+    while(1)
+    {
+		
+	strtrans(a);
+  d4:	c8 01       	movw	r24, r16
+  d6:	0e 94 45 00 	call	0x8a	; 0x8a <strtrans>
+	strtrans("%d",p);
+  da:	62 e0       	ldi	r22, 0x02	; 2
+  dc:	70 e0       	ldi	r23, 0x00	; 0
+  de:	89 e6       	ldi	r24, 0x69	; 105
+  e0:	90 e0       	ldi	r25, 0x00	; 0
+  e2:	0e 94 45 00 	call	0x8a	; 0x8a <strtrans>
+  e6:	2e 2d       	mov	r18, r14
+  e8:	3f 2d       	mov	r19, r15
+  ea:	fe 01       	movw	r30, r28
+  ec:	31 97       	sbiw	r30, 0x01	; 1
+  ee:	f1 f7       	brne	.-4      	; 0xec <main+0x44>
+  f0:	21 50       	subi	r18, 0x01	; 1
+  f2:	31 09       	sbc	r19, r1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+  f4:	21 15       	cp	r18, r1
+  f6:	31 05       	cpc	r19, r1
+  f8:	c1 f7       	brne	.-16     	; 0xea <main+0x42>
+  fa:	ec cf       	rjmp	.-40     	; 0xd4 <main+0x2c>
+
+000000fc <_exit>:
+  fc:	f8 94       	cli
+
+000000fe <__stop_program>:
+  fe:	ff cf       	rjmp	.-2      	; 0xfe <__stop_program>

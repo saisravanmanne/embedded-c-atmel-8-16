@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "while ground check 1", "while ground check 1\while ground check 1.cproj", "{03D49630-1019-4784-BC82-6332B97A1307}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03D49630-1019-4784-BC82-6332B97A1307}.Debug|AVR.ActiveCfg = Debug|AVR
+		{03D49630-1019-4784-BC82-6332B97A1307}.Debug|AVR.Build.0 = Debug|AVR
+		{03D49630-1019-4784-BC82-6332B97A1307}.Release|AVR.ActiveCfg = Release|AVR
+		{03D49630-1019-4784-BC82-6332B97A1307}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
