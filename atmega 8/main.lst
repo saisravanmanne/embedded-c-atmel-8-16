@@ -1,0 +1,288 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	flikgreen
+  18               	flikgreen:
+  19               	.LFB7:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 C098      		cbi 56-32,0
+  25               	.LBB62:
+  26               	.LBB63:
+  27               	.LBB64:
+  28               	.LBB65:
+  29               	.LM3:
+  30 0002 80E2      		ldi r24,lo8(20000)
+  31 0004 9EE4      		ldi r25,hi8(20000)
+  32               	.LVL0:
+  33               	/* #APP */
+  34               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  35 0006 0197      		1: sbiw r24,1
+  36 0008 01F4      		brne 1b
+  37               	 ;  0 "" 2
+  38               	/* #NOAPP */
+  39               	.LBE65:
+  40               	.LBE64:
+  41               	.LBE63:
+  42               	.LBE62:
+  43               	.LM4:
+  44 000a C09A      		sbi 56-32,0
+  45               	.LBB66:
+  46               	.LBB67:
+  47               	.LBB68:
+  48               	.LBB69:
+  49               	.LBB70:
+  50               	.LBB71:
+  51               	.LM5:
+  52 000c 84ED      		ldi r24,lo8(20180)
+  53 000e 9EE4      		ldi r25,hi8(20180)
+  54               	.LVL1:
+  55               	/* #APP */
+  56               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  57 0010 0197      		1: sbiw r24,1
+  58 0012 01F4      		brne 1b
+  59               	 ;  0 "" 2
+  60               	/* epilogue start */
+  61               	/* #NOAPP */
+  62               	.LBE71:
+  63               	.LBE70:
+  64               	.LBE69:
+  65               	.LBE68:
+  66               	.LBE67:
+  67               	.LBE66:
+  68               	.LM6:
+  69 0014 0895      		ret
+  70               	.LFE7:
+  72               	.global	flikred
+  74               	flikred:
+  75               	.LFB8:
+  76               	.LM7:
+  77               	/* prologue: function */
+  78               	/* frame size = 0 */
+  79               	.LM8:
+  80 0016 88B3      		in r24,56-32
+  81 0018 807F      		andi r24,lo8(-16)
+  82 001a 88BB      		out 56-32,r24
+  83               	.LBB72:
+  84               	.LBB73:
+  85               	.LBB74:
+  86               	.LBB75:
+  87               	.LM9:
+  88 001c 80E2      		ldi r24,lo8(20000)
+  89 001e 9EE4      		ldi r25,hi8(20000)
+  90               	.LVL2:
+  91               	/* #APP */
+  92               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  93 0020 0197      		1: sbiw r24,1
+  94 0022 01F4      		brne 1b
+  95               	 ;  0 "" 2
+  96               	/* #NOAPP */
+  97               	.LBE75:
+  98               	.LBE74:
+  99               	.LBE73:
+ 100               	.LBE72:
+ 101               	.LM10:
+ 102 0024 C39A      		sbi 56-32,3
+ 103               	.LBB76:
+ 104               	.LBB77:
+ 105               	.LBB78:
+ 106               	.LBB79:
+ 107               	.LBB80:
+ 108               	.LBB81:
+ 109               	.LM11:
+ 110 0026 84ED      		ldi r24,lo8(20180)
+ 111 0028 9EE4      		ldi r25,hi8(20180)
+ 112               	.LVL3:
+ 113               	/* #APP */
+ 114               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 115 002a 0197      		1: sbiw r24,1
+ 116 002c 01F4      		brne 1b
+ 117               	 ;  0 "" 2
+ 118               	/* epilogue start */
+ 119               	/* #NOAPP */
+ 120               	.LBE81:
+ 121               	.LBE80:
+ 122               	.LBE79:
+ 123               	.LBE78:
+ 124               	.LBE77:
+ 125               	.LBE76:
+ 126               	.LM12:
+ 127 002e 0895      		ret
+ 128               	.LFE8:
+ 130               	.global	flikwhite
+ 132               	flikwhite:
+ 133               	.LFB9:
+ 134               	.LM13:
+ 135               	/* prologue: function */
+ 136               	/* frame size = 0 */
+ 137               	.LM14:
+ 138 0030 88B3      		in r24,56-32
+ 139 0032 807E      		andi r24,lo8(-32)
+ 140 0034 88BB      		out 56-32,r24
+ 141               	.LBB82:
+ 142               	.LBB83:
+ 143               	.LBB84:
+ 144               	.LBB85:
+ 145               	.LM15:
+ 146 0036 80E2      		ldi r24,lo8(20000)
+ 147 0038 9EE4      		ldi r25,hi8(20000)
+ 148               	.LVL4:
+ 149               	/* #APP */
+ 150               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 151 003a 0197      		1: sbiw r24,1
+ 152 003c 01F4      		brne 1b
+ 153               	 ;  0 "" 2
+ 154               	/* #NOAPP */
+ 155               	.LBE85:
+ 156               	.LBE84:
+ 157               	.LBE83:
+ 158               	.LBE82:
+ 159               	.LM16:
+ 160 003e C49A      		sbi 56-32,4
+ 161               	.LBB86:
+ 162               	.LBB87:
+ 163               	.LBB88:
+ 164               	.LBB89:
+ 165               	.LBB90:
+ 166               	.LBB91:
+ 167               	.LM17:
+ 168 0040 84ED      		ldi r24,lo8(20180)
+ 169 0042 9EE4      		ldi r25,hi8(20180)
+ 170               	.LVL5:
+ 171               	/* #APP */
+ 172               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 173 0044 0197      		1: sbiw r24,1
+ 174 0046 01F4      		brne 1b
+ 175               	 ;  0 "" 2
+ 176               	/* epilogue start */
+ 177               	/* #NOAPP */
+ 178               	.LBE91:
+ 179               	.LBE90:
+ 180               	.LBE89:
+ 181               	.LBE88:
+ 182               	.LBE87:
+ 183               	.LBE86:
+ 184               	.LM18:
+ 185 0048 0895      		ret
+ 186               	.LFE9:
+ 188               	.global	main
+ 190               	main:
+ 191               	.LFB6:
+ 192               	.LM19:
+ 193 004a CF93      		push r28
+ 194 004c DF93      		push r29
+ 195               	/* prologue: function */
+ 196               	/* frame size = 0 */
+ 197               	.LM20:
+ 198 004e 8FEF      		ldi r24,lo8(-1)
+ 199 0050 87BB      		out 55-32,r24
+ 200               	.LM21:
+ 201 0052 14BA      		out 52-32,__zero_reg__
+ 202               	.LM22:
+ 203 0054 11BA      		out 49-32,__zero_reg__
+ 204               	.LM23:
+ 205 0056 86EE      		ldi r24,lo8(-26)
+ 206 0058 88BB      		out 56-32,r24
+ 207               	.LM24:
+ 208 005a 8FE7      		ldi r24,lo8(127)
+ 209 005c 85BB      		out 53-32,r24
+ 210               	.LM25:
+ 211 005e 12BA      		out 50-32,__zero_reg__
+ 212               	.LVL6:
+ 213               	.L17:
+ 214               	.LM26:
+ 215 0060 00D0      		rcall flikgreen
+ 216               	.LM27:
+ 217 0062 00D0      		rcall flikred
+ 218               	.LM28:
+ 219 0064 00D0      		rcall flikwhite
+ 220               	.LM29:
+ 221 0066 849B      		sbis 48-32,4
+ 222 0068 00C0      		rjmp .L19
+ 223 006a C4E0      		ldi r28,lo8(4)
+ 224 006c D0E0      		ldi r29,hi8(4)
+ 225 006e 00C0      		rjmp .L19
+ 226               	.L10:
+ 227               	.LM30:
+ 228 0070 839B      		sbis 48-32,3
+ 229 0072 00C0      		rjmp .L9
+ 230 0074 C3E0      		ldi r28,lo8(3)
+ 231 0076 D0E0      		ldi r29,hi8(3)
+ 232               	.L9:
+ 233               	.LM31:
+ 234 0078 C098      		cbi 56-32,0
+ 235               	.LM32:
+ 236 007a 00D0      		rcall flikred
+ 237               	.LM33:
+ 238 007c 00D0      		rcall flikwhite
+ 239               	.L19:
+ 240               	.LM34:
+ 241 007e C430      		cpi r28,4
+ 242 0080 D105      		cpc r29,__zero_reg__
+ 243 0082 01F0      		breq .L10
+ 244 0084 00C0      		rjmp .L20
+ 245               	.L13:
+ 246               	.LM35:
+ 247 0086 829B      		sbis 48-32,2
+ 248 0088 00C0      		rjmp .L12
+ 249 008a C2E0      		ldi r28,lo8(2)
+ 250 008c D0E0      		ldi r29,hi8(2)
+ 251               	.L12:
+ 252               	.LM36:
+ 253 008e 88B3      		in r24,56-32
+ 254 0090 807F      		andi r24,lo8(-16)
+ 255 0092 88BB      		out 56-32,r24
+ 256               	.LM37:
+ 257 0094 00D0      		rcall flikgreen
+ 258               	.LM38:
+ 259 0096 00D0      		rcall flikwhite
+ 260               	.L20:
+ 261               	.LM39:
+ 262 0098 C330      		cpi r28,3
+ 263 009a D105      		cpc r29,__zero_reg__
+ 264 009c 01F0      		breq .L13
+ 265 009e 00C0      		rjmp .L21
+ 266               	.L22:
+ 267               	.LM40:
+ 268 00a0 819B      		sbis 48-32,1
+ 269 00a2 00C0      		rjmp .L15
+ 270 00a4 C1E0      		ldi r28,lo8(1)
+ 271 00a6 D0E0      		ldi r29,hi8(1)
+ 272               	.L15:
+ 273               	.LM41:
+ 274 00a8 88B3      		in r24,56-32
+ 275 00aa 807E      		andi r24,lo8(-32)
+ 276 00ac 88BB      		out 56-32,r24
+ 277               	.LM42:
+ 278 00ae 00D0      		rcall flikgreen
+ 279               	.LM43:
+ 280 00b0 00D0      		rcall flikred
+ 281               	.L21:
+ 282               	.LM44:
+ 283 00b2 C230      		cpi r28,2
+ 284 00b4 D105      		cpc r29,__zero_reg__
+ 285 00b6 01F4      		brne .L17
+ 286 00b8 00C0      		rjmp .L22
+ 287               	.LFE6:
+ 337               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:2      *ABS*:0000003f __SREG__
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:5      *ABS*:00000034 __CCP__
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:18     .text:00000000 flikgreen
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:74     .text:00000016 flikred
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:132    .text:00000030 flikwhite
+C:\Users\SRAVAN\AppData\Local\Temp/ccCUbChF.s:190    .text:0000004a main
+
+NO UNDEFINED SYMBOLS
